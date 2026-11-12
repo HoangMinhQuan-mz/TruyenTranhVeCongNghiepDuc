@@ -22,7 +22,7 @@
     toast.textContent = message;
     toast.classList.add("show");
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 2400);
+    toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 2500);
   }
 
   function go(target) {
@@ -50,7 +50,6 @@
     pages.forEach(function (page, i) {
       page.classList.toggle("f", i < index);
       page.classList.toggle("on", i === index);
-      // Trang đang lật giữ z-index cao nhất để thấy rõ tờ giấy xoay qua
       if (i === oldIndex && oldIndex !== index) {
         page.style.zIndex = 220;
       } else {
@@ -63,7 +62,7 @@
     progress.style.height = ((index + 1) / pages.length * 100) + "%";
     prev.disabled = index === 0;
     next.disabled = index === pages.length - 1;
-    document.title = (index + 1) + "/" + pages.length + " · Linh và Bolt";
+    document.title = (index + 1) + "/" + pages.length + " · Lộc và Bolt";
   }
 
   prev.addEventListener("click", function () { go(index - 1); });
@@ -118,7 +117,6 @@
     showToast("Nhấn hai bên trang, vuốt ngang hoặc phím ← → | V: Giọng đọc | M: Tiếng lật giấy");
   });
 
-  // Thêm lớp mặt sau & hiệu ứng ánh sáng cho từng tờ sách
   pages.forEach(function (page) {
     var back = document.createElement("div");
     back.className = "pg-backface";
