@@ -109,5 +109,6 @@
       if (!item.style.getPropertyValue("--j")) item.style.setProperty("--j", i);
     });
   });
+  window.LinhBolt={go:go,count:pages.length};
   go(0);
 })();
