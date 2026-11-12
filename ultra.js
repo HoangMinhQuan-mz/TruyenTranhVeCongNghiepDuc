@@ -441,13 +441,22 @@
   }
 
   /* ---------- Phím tắt ---------- */
-  document.addEventListener("keydown", function (e) {
-    if (e.altKey || e.ctrlKey || e.metaKey) return;
-    var k = e.key.toLowerCase();
-    if (k === "f") document.getElementById("fullscreen").click();
-    else if (k === "t") document.getElementById("theme").click();
-    else if (k === "m" && sndBtn) sndBtn.click();
-    else if (k === "v" && voiceBtn) voiceBtn.click();
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest("#celebrateBtn");
+    if (btn) {
+      e.preventDefault();
+      e.stopPropagation();
+      celebrate();
+      if (api && api.toast) api.toast("🎊 Pháo hoa rực rỡ đã bùng nổ!");
+      return;
+    }
+    var rep = e.target.closest("#replayBtn");
+    if (rep) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (api) api.go(0);
+      return;
+    }
   });
 
   function enter(i) {
