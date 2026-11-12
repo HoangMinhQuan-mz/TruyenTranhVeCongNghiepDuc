@@ -3,30 +3,53 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Oanh và Bolt: Hành trình công nghiệp Đức</title>
+<title>Linh và Bolt: Hành trình công nghiệp Đức</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800&family=Lilita+One&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
 <path id="dep" pathLength="1" d="M11.6 20.8L22.1 18.2 29.4 15.6 28.3 2.6 36.8 3.9 43.1 7.8 52.5 14.3 64.1 13 78.8 6.5 87.2 15.6 88.2 27.3 91.4 37.7 92.4 46.8 95.6 53.3 88.2 54.6 66.2 62.4 69.3 70.2 83 81.9 74.6 98.8 48.3 98.8 38.9 98.2 28.4 96.2 17.9 97.5 24.2 80.6 20 79.3 5.3 72.8 2.1 65 1 55.9 1 44.2 9.4 41 11.6 32.5 13.7 24.7Z"/>
-<symbol id="linh" viewBox="0 0 100 120" stroke="#1d1b1a" stroke-width="4"><rect x="12" y="70" width="16" height="32" rx="7" fill="#f4b73a"/><rect x="22" y="66" width="56" height="50" rx="14" fill="#d6372b"/><circle cx="50" cy="40" r="28" fill="#f2c9a0"/><path d="M21 40C18 8 82 8 79 40 66 28 36 26 21 40z" fill="#1d1b1a"/><circle cx="40" cy="46" r="3.5" fill="#1d1b1a" stroke="none"/><circle cx="60" cy="46" r="3.5" fill="#1d1b1a" stroke="none"/><path d="M42 56q8 7 16 0" fill="none" stroke-width="3"/></symbol>
-<symbol id="bolt" viewBox="0 0 100 120" stroke="#1d1b1a" stroke-width="4"><path d="M50 30V12" fill="none"/><circle cx="50" cy="10" r="6" fill="#d6372b"/><rect x="10" y="62" width="14" height="30" rx="7" fill="#3f6f8f"/><rect x="76" y="62" width="14" height="30" rx="7" fill="#3f6f8f"/><rect x="22" y="30" width="56" height="70" rx="14" fill="#f4b73a"/><rect x="30" y="40" width="40" height="24" rx="8" fill="#1d1b1a"/><circle cx="42" cy="52" r="4.5" fill="#7fe3ff" stroke="none"/><circle cx="58" cy="52" r="4.5" fill="#7fe3ff" stroke="none"/><circle cx="50" cy="82" r="7" fill="#d6372b"/></symbol>
+<symbol id="linh" viewBox="0 0 100 120" stroke="#1d1b1a" stroke-width="4">
+<path class="linh-arm linh-arm-left" d="M25 76Q8 82 13 96" fill="none" stroke="#f2c9a0" stroke-width="8" stroke-linecap="round"/>
+<path class="linh-arm linh-arm-right" d="M75 76Q92 82 87 96" fill="none" stroke="#f2c9a0" stroke-width="8" stroke-linecap="round"/>
+<rect x="12" y="70" width="16" height="32" rx="7" fill="#f4b73a"/>
+<rect x="22" y="66" width="56" height="50" rx="14" fill="#d6372b"/>
+<path d="M34 112v5M66 112v5" stroke="#1d1b1a" stroke-width="6" stroke-linecap="round"/>
+<circle cx="50" cy="40" r="28" fill="#f2c9a0"/>
+<path d="M21 40C18 8 82 8 79 40 66 28 36 26 21 40z" fill="#1d1b1a"/>
+<path class="linh-eye" d="M36.5 46a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0 -7 0M56.5 46a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0 -7 0" fill="#1d1b1a" stroke="none"/>
+<circle cx="31" cy="55" r="4" fill="#ef8f83" stroke="none" opacity=".65"/>
+<circle cx="69" cy="55" r="4" fill="#ef8f83" stroke="none" opacity=".65"/>
+<path d="M42 56q8 7 16 0" fill="none" stroke-width="3" stroke-linecap="round"/>
+</symbol>
+<symbol id="bolt" viewBox="0 0 100 120" stroke="#1d1b1a" stroke-width="4">
+<path d="M50 30V12" fill="none" stroke-width="5"/>
+<circle class="bolt-antenna" cx="50" cy="10" r="6" fill="#d6372b"/>
+<path d="M22 77L7 91M78 77l15 14" fill="none" stroke="#3f6f8f" stroke-width="8" stroke-linecap="round"/>
+<rect x="10" y="62" width="14" height="30" rx="7" fill="#3f6f8f"/>
+<rect x="76" y="62" width="14" height="30" rx="7" fill="#3f6f8f"/>
+<rect x="22" y="30" width="56" height="70" rx="14" fill="#f4b73a"/>
+<rect x="30" y="40" width="40" height="24" rx="8" fill="#1d1b1a"/>
+<g class="bolt-eyes"><circle cx="42" cy="52" r="4.5" fill="#7fe3ff" stroke="none"/><circle cx="58" cy="52" r="4.5" fill="#7fe3ff" stroke="none"/></g>
+<path d="M43 73q7 6 14 0" fill="none" stroke="#1d1b1a" stroke-width="3" stroke-linecap="round"/>
+<circle cx="50" cy="86" r="7" fill="#d6372b"/>
+</symbol>
 </svg>
 
 <main class="book book-enter" id="book" aria-label="Truyện tranh sách lật">
 
-<section class="pg cover">
+<section class="pg cover" data-page="BÌA">
 <div class="gear"></div>
 <div class="tt" style="z-index:1">Truyện tranh khám phá</div>
-<h1 style="z-index:1">OANH VÀ BOLT<br>Hành trình công nghiệp Đức</h1>
+<h1 style="z-index:1">LINH VÀ BOLT<br>Hành trình công nghiệp Đức</h1>
 <div class="row" style="z-index:1;align-items:flex-end"><svg class="ch" style="width:30cqw;height:36cqw"><use href="#linh"/></svg><svg class="ch" style="width:30cqw;height:36cqw"><use href="#bolt"/></svg></div>
 <div class="sb" style="z-index:1">Lật trang để bắt đầu nhé! <span class="cover-hint">← →</span></div>
 </section>
 
 <section class="pg"><div class="tt">Chào mừng đến nước Đức!</div>
 <div class="gr c2" style="grid-template-rows:1fr 1fr 1fr">
-<div class="pn sp"><div class="row"><svg class="ch"><use href="#linh"/></svg><div class="sb">Tớ là Oanh, sinh viên đang thực tập ở Đức. Còn đây là Bolt, robot dẫn đường!</div></div></div>
+<div class="pn sp"><div class="row"><svg class="ch"><use href="#linh"/></svg><div class="sb">Tớ là Linh, sinh viên đang thực tập ở Đức. Còn đây là Bolt, robot dẫn đường!</div></div></div>
 <div class="pn g"><span class="em">📐</span><span class="mid">357.588 km²</span>Lớn thứ 4 trong EU</div>
 <div class="pn s"><span class="em">👥</span><span class="mid">84,5 triệu dân</span>Đông nhất EU</div>
 <div class="pn sp"><div class="row"><svg class="ch"><use href="#bolt"/></svg><div class="sb">Thủ đô là Béc-lin. Cả nước có 16 bang, mỗi bang có hiến pháp và chính quyền riêng. Dân số già hóa nên nước Đức cần lao động nhập cư.</div></div></div>
