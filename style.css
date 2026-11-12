@@ -321,31 +321,33 @@ html[data-theme="dark"] .side-dock{background:rgba(36,33,30,.8)}
   transition:height .4s ease;
 }
 
+/* Khung chứa các chấm điều hướng dọc hiển thị cố định, không bị ẩn */
 .dots-v{
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:4px;
-  max-height:190px;
+  gap:3px;
+  height:130px;
+  max-height:130px;
   overflow-y:auto;
   scrollbar-width:none;
-  padding:2px;
+  padding:2px 0;
 }
 .dots-v::-webkit-scrollbar{display:none}
 .dot{
-  width:8px;
-  height:8px;
+  width:7px;
+  height:7px;
   padding:0;
   border-radius:99px;
   border:1.5px solid var(--fg);
-  background:transparent;
+  background:var(--btn);
   cursor:pointer;
   transition:height .25s,background .25s,transform .2s;
   flex:none;
 }
-.dot:hover{transform:scale(1.3)}
+.dot:hover{transform:scale(1.4)}
 .dot.on{
-  height:20px;
+  height:16px;
   border-color:var(--ink);
   background:linear-gradient(180deg,var(--red),var(--gold));
 }
