@@ -32,12 +32,8 @@ body{
   justify-content:center;
   padding:8px 10px;
   overflow:hidden;
-  background-image:
-    radial-gradient(circle at 10% 15%,rgba(244,183,58,.22),transparent 28%),
-    radial-gradient(circle at 88% 82%,rgba(63,111,143,.22),transparent 30%);
 }
 
-/* Sân khấu chính: sách chiếm tối đa chiều cao, thanh công cụ nằm gọn bên cạnh */
 .stage{
   display:flex;
   align-items:center;
@@ -50,7 +46,6 @@ body{
 
 .book{
   position:relative;
-  /* Ưu tiên tối đa chiều cao màn hình để truyện to và dễ đọc nhất */
   height:min(95dvh,calc((100vw - 96px)*1.3333));
   width:auto;
   aspect-ratio:3/4;
@@ -83,7 +78,6 @@ body{
   box-shadow:1cqw 1.4cqw 0 rgba(0,0,0,.24),inset .7cqw 0 1.2cqw rgba(0,0,0,.12);
 }
 
-/* Hiệu ứng tờ sách đang lật thực sự quanh gáy trái */
 .pg.f{
   transform:rotateY(-176deg);
   opacity:0;
@@ -93,7 +87,6 @@ body{
   transition:transform .95s cubic-bezier(.64,.04,.26,1),opacity .22s .74s,filter .55s;
 }
 
-/* Gáy sách nổi bên trái */
 .book::after{
   content:"";
   position:absolute;
@@ -108,7 +101,6 @@ body{
   box-shadow:-2px 0 6px rgba(0,0,0,.3);
 }
 
-/* Bóng đổ cong khi trang lật */
 .pg::after{
   content:"";
   position:absolute;
@@ -121,7 +113,6 @@ body{
 }
 .pg.f::after{opacity:1}
 
-/* Tiêu đề trang - Font Baloo 2 hỗ trợ 100% tiếng Việt có dấu */
 .tt{
   font-family:var(--font-display);
   font-weight:800;
@@ -156,6 +147,11 @@ body{
   gap:.9cqw;
   min-height:0;
   box-shadow:.4cqw .45cqw 0 rgba(29,27,26,.16);
+  transition:box-shadow .25s,border-color .25s;
+}
+.pn.reading-highlight{
+  border-color:var(--red);
+  box-shadow:0 0 0 .45cqw rgba(214,55,43,.35),.5cqw .6cqw 0 rgba(214,55,43,.35);
 }
 .pn.r{background:var(--red);color:#fff}
 .pn.g{background:var(--gold)}
@@ -205,7 +201,7 @@ body{
 .row{display:flex;align-items:flex-end;gap:1.9cqw}
 .row>.sb{flex:1;margin-bottom:1.8cqw}
 .ch{width:14.5cqw;height:17.5cqw;flex:none}
-.em{font-size:8.2cqw;line-height:1}
+.em{font-size:8.2cqw;line-height:1;display:inline-block;transform-origin:center}
 .c2{grid-template-columns:1fr 1fr}
 .c1{grid-template-columns:1fr}
 .sp{grid-column:1/-1}
@@ -232,7 +228,7 @@ body{
   opacity:.85;
 }
 .map{position:relative;flex:1;background:#cfe0e8}
-.nt{font-size:2.35cqw;opacity:.75;text-align:right;font-weight:600}
+.nt{font-size:2.35cqw;opacity:.82;text-align:right;font-weight:600}
 
 /* Thanh điều khiển dọc bên cạnh sách */
 .side-dock{
@@ -243,7 +239,7 @@ body{
   gap:10px;
   height:min(92dvh,680px);
   padding:12px 8px;
-  background:rgba(255,255,255,.55);
+  background:rgba(255,255,255,.65);
   backdrop-filter:blur(10px);
   -webkit-backdrop-filter:blur(10px);
   border:2px solid var(--fg);
@@ -252,7 +248,7 @@ body{
   z-index:300;
   flex:none;
 }
-html[data-theme="dark"] .side-dock{background:rgba(36,33,30,.75)}
+html[data-theme="dark"] .side-dock{background:rgba(36,33,30,.8)}
 
 .brand-badge{
   font-family:var(--font-brand);
@@ -383,7 +379,6 @@ html[data-theme="dark"] .side-dock{background:rgba(36,33,30,.75)}
 @keyframes slide{from{opacity:0;transform:translateX(-45cqw) rotate(-6deg)}to{opacity:1;transform:rotate(-1deg)}}
 @keyframes stamp{0%{opacity:0;transform:scale(2.8)}65%{opacity:1;transform:scale(.9)}100%{opacity:1;transform:none}}
 @keyframes bob{50%{transform:translateY(-1.3cqw) rotate(2deg)}}
-@keyframes wig{0%,80%,100%{transform:none}88%{transform:rotate(-12deg) scale(1.12)}94%{transform:rotate(9deg)}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes drop{from{opacity:0;transform:translateY(-16cqw) scale(1.2)}to{opacity:1;transform:none}}
 @keyframes draw{to{stroke-dashoffset:0}}
@@ -398,7 +393,6 @@ html[data-theme="dark"] .side-dock{background:rgba(36,33,30,.75)}
 .pg.on.cover h1{animation:drop .7s .45s cubic-bezier(.3,1.5,.5,1) both}
 .ch{animation:bob 2.5s ease-in-out infinite}
 .row .ch:nth-of-type(2){animation-delay:-1.25s}
-.em{display:inline-block;animation:wig 3s ease-in-out infinite}
 .cover .gear{animation:spin 32s linear infinite}
 
 .de{stroke:var(--ink);stroke-width:1.4;stroke-linejoin:round;fill:#ffd98a;fill-opacity:0;stroke-dasharray:1;stroke-dashoffset:1}
@@ -410,7 +404,7 @@ html[data-theme="dark"] .side-dock{background:rgba(36,33,30,.75)}
 svg text{font:700 4.3px var(--font-body);fill:#1d1b1a;paint-order:stroke;stroke:#f7edd5;stroke-width:1.2px}
 .m3 text{font-size:5.3px}
 
-/* Mobile dọc: dock chuyển xuống thanh ngang siêu mảnh để sách vẫn to tối đa */
+/* Mobile dọc */
 @media(max-width:640px) and (orientation:portrait){
   body{padding:6px}
   .stage{flex-direction:column;gap:8px}
