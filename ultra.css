@@ -1,4 +1,23 @@
-/* ===== ULTRA: Hiệu ứng lật sách 3D chân thực, ánh sáng giấy & hoạt họa nhân vật ===== */
+/* ===== ULTRA: Nền chuyển động sinh động, hiệu ứng lật sách 3D, emoji chuyển động & trang kết ===== */
+
+/* Nền gradient & họa tiết chuyển động liên tục đằng sau truyện */
+body{
+  background:linear-gradient(-45deg,#e6d9be,#d2c4a6,#c7d6df,#ebd7ad);
+  background-size:350% 350%;
+  animation:bgGradientShift 18s ease infinite;
+}
+html[data-theme="dark"] body{
+  background:linear-gradient(-45deg,#161514,#1f1d1b,#19232b,#241f18);
+  background-size:350% 350%;
+  animation:bgGradientShift 18s ease infinite;
+}
+@keyframes bgGradientShift{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* Các quầng sáng cực quang trôi lơ lửng đằng sau */
 html::before{
   content:"";
   position:fixed;
@@ -6,18 +25,48 @@ html::before{
   z-index:0;
   pointer-events:none;
   background:
-    radial-gradient(40% 40% at 20% 25%,rgba(244,183,58,.28),transparent),
-    radial-gradient(35% 35% at 80% 70%,rgba(63,111,143,.28),transparent),
-    radial-gradient(30% 30% at 70% 18%,rgba(214,55,43,.16),transparent);
+    radial-gradient(38% 38% at 22% 28%,rgba(244,183,58,.36),transparent),
+    radial-gradient(36% 36% at 78% 72%,rgba(63,111,143,.36),transparent),
+    radial-gradient(30% 30% at 68% 20%,rgba(214,55,43,.22),transparent);
   filter:blur(26px);
-  animation:aurora 22s ease-in-out infinite alternate;
+  animation:auroraDrift 16s ease-in-out infinite alternate;
 }
-html[data-theme="dark"]::before{opacity:.5}
-@keyframes aurora{to{transform:translate3d(4%,3%,0) rotate(8deg) scale(1.1)}}
-.fx{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+html[data-theme="dark"]::before{opacity:.55}
+@keyframes auroraDrift{
+  0%{transform:translate3d(-3%,-2%,0) rotate(0deg) scale(1)}
+  50%{transform:translate3d(4%,3%,0) rotate(6deg) scale(1.08)}
+  100%{transform:translate3d(-2%,4%,0) rotate(-4deg) scale(1.04)}
+}
+
+/* Lưới kỹ thuật mảnh trôi nhẹ phía sau */
+html::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:.24;
+  background-image:
+    linear-gradient(rgba(29,27,26,.12) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(29,27,26,.12) 1px,transparent 1px);
+  background-size:44px 44px;
+  animation:gridPan 24s linear infinite;
+}
+html[data-theme="dark"]::after{
+  opacity:.16;
+  background-image:
+    linear-gradient(rgba(241,234,217,.12) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(241,234,217,.12) 1px,transparent 1px);
+}
+@keyframes gridPan{
+  from{background-position:0 0}
+  to{background-position:44px 44px}
+}
+
+.fx{position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
 .stage{position:relative;z-index:2}
 
-/* Xấp giấy dày bên mép phải tạo cảm giác cuốn sách thật */
+/* Xấp giấy dày bên mép phải */
 .book{transition:filter .3s,rotate .28s ease-out}
 .book::before{
   content:"";
@@ -54,7 +103,7 @@ html[data-theme="dark"]::before{opacity:.5}
   z-index:15;
   pointer-events:none;
   opacity:0;
-  background:linear-gradient(105deg,transparent 25%,rgba(255,255,255,.55) 48%,rgba(0,0,0,.15) 56%,transparent 75%);
+  background:linear-gradient(105deg,transparent 25%,rgba(255,255,255,.58) 48%,rgba(0,0,0,.15) 56%,transparent 75%);
   transform:translateX(100%);
 }
 .pg.turning .pg-sheen{
@@ -71,6 +120,45 @@ html[data-theme="dark"]::before{opacity:.5}
 .turn-back{animation:bookNudgeB .92s ease}
 @keyframes bookNudgeF{0%,100%{transform:translateX(0)}35%{transform:translateX(-.6cqw)}}
 @keyframes bookNudgeB{0%,100%{transform:translateX(0)}35%{transform:translateX(.6cqw)}}
+
+/* ===== HIỆU ỨNG CHUYỂN ĐỘNG ĐI CHUYỂN ĐỘNG LẠI CHO ICON & EMOJI ===== */
+.em-bounce{animation:emBounce 1.8s ease-in-out infinite}
+@keyframes emBounce{
+  0%,100%{transform:translateY(0) scale(1)}
+  40%{transform:translateY(-1.5cqw) scale(1.12)}
+  60%{transform:translateY(-.3cqw) scale(.96)}
+}
+
+.em-sway{animation:emSway 2.4s ease-in-out infinite}
+@keyframes emSway{
+  0%,100%{transform:translateX(0) rotate(-6deg)}
+  50%{transform:translateX(1.4cqw) rotate(8deg)}
+}
+
+.em-float{animation:emFloat 2.8s ease-in-out infinite}
+@keyframes emFloat{
+  0%,100%{transform:translate(0,0) rotate(-3deg)}
+  33%{transform:translate(.9cqw,-1.1cqw) rotate(4deg)}
+  66%{transform:translate(-.9cqw,-.6cqw) rotate(-4deg)}
+}
+
+.em-spin{animation:emSpin 6s linear infinite}
+@keyframes emSpin{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+
+.em-drive{animation:emDrive 2.2s ease-in-out infinite}
+@keyframes emDrive{
+  0%,100%{transform:translateX(-1.2cqw) rotate(-2deg)}
+  50%{transform:translateX(1.6cqw) rotate(2deg)}
+}
+
+.em-pulse{animation:emPulse 1.6s ease-in-out infinite}
+@keyframes emPulse{
+  0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 rgba(244,183,58,0))}
+  50%{transform:scale(1.16);filter:drop-shadow(0 .4cqw .8cqw rgba(244,183,58,.65))}
+}
 
 /* Vệt sáng quét tiêu đề */
 .tt{position:relative;overflow:hidden}
@@ -99,11 +187,11 @@ html[data-theme="dark"]::before{opacity:.5}
 }
 .pn:hover::before{opacity:1}
 
-/* Diễn xuất nhân vật Linh & Bolt */
-.linh-arm-left{transform-origin:22px 78px;animation:linhWave 4.8s ease-in-out infinite}
-.linh-arm-right{transform-origin:76px 78px;animation:linhWave 4.8s ease-in-out infinite reverse}
-@keyframes linhWave{0%,82%,100%{transform:rotate(0)}87%{transform:rotate(-24deg)}92%{transform:rotate(14deg)}}
-.linh-eye{transform-box:fill-box;transform-origin:center;animation:blink 4.2s infinite}
+/* Diễn xuất nhân vật Lộc & Bolt */
+.loc-arm-left{transform-origin:22px 78px;animation:locWave 4.5s ease-in-out infinite}
+.loc-arm-right{transform-origin:76px 78px;animation:locWave 4.5s ease-in-out infinite reverse}
+@keyframes locWave{0%,80%,100%{transform:rotate(0)}86%{transform:rotate(-24deg)}92%{transform:rotate(14deg)}}
+.loc-eye{transform-box:fill-box;transform-origin:center;animation:blink 4.2s infinite}
 .bolt-eyes{transform-box:fill-box;transform-origin:center;animation:robotBlink 5s infinite}
 .bolt-antenna{transform-box:fill-box;transform-origin:center;animation:antennaGlow 1.5s ease-in-out infinite}
 @keyframes blink{0%,43%,47%,100%{transform:scaleY(1)}45%{transform:scaleY(.12)}}
@@ -115,8 +203,59 @@ html[data-theme="dark"]::before{opacity:.5}
 @keyframes talk{50%{transform:translateY(-.8cqw) scaleY(1.04)}}
 .row.talk .sb,.sb.speaking{box-shadow:.35cqw .45cqw 0 rgba(214,55,43,.45);border-color:var(--red)}
 
+/* ===== TRANG CUỐI: TIA SÁNG XOAY, HUY HIỆU & NÚT BẮN PHÁO HOA ===== */
+.finale-rays{
+  position:absolute;
+  inset:-40%;
+  z-index:1;
+  pointer-events:none;
+  background:repeating-conic-gradient(rgba(244,183,58,.18) 0 10deg,transparent 10deg 20deg);
+  animation:spin 26s linear infinite;
+}
+.finale-badge{
+  background:var(--gold);
+  color:var(--ink);
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:3.6cqw;
+  padding:.9cqw 2.4cqw;
+  border:.55cqw solid var(--ink);
+  border-radius:99px;
+  box-shadow:.5cqw .5cqw 0 var(--ink);
+  display:flex;
+  align-items:center;
+  gap:1.2cqw;
+  animation:badgeGlow 2s ease-in-out infinite;
+}
+@keyframes badgeGlow{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.04)}
+}
+.finale-actions{
+  display:flex;
+  gap:2cqw;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.finale-btn{
+  font-family:var(--font-body);
+  font-weight:800;
+  font-size:2.8cqw;
+  padding:1.2cqw 2.6cqw;
+  border:.5cqw solid var(--ink);
+  border-radius:99px;
+  background:#fff;
+  color:var(--ink);
+  cursor:pointer;
+  box-shadow:.45cqw .45cqw 0 var(--ink);
+  transition:transform .16s,background .16s;
+}
+.finale-btn.gold{background:var(--gold)}
+.finale-btn:hover{transform:translateY(-2px) scale(1.03)}
+.finale-btn:active{transform:translateY(1px)}
+
 @media(prefers-reduced-motion:reduce){
-  html::before,.pg.on .tt::before,.row.talk .ch,.linh-arm-left,.linh-arm-right,.linh-eye,.bolt-eyes,.bolt-antenna{animation:none!important}
+  body,html::before,html::after,.pg.on .tt::before,.row.talk .ch,.loc-arm-left,.loc-arm-right,.loc-eye,.bolt-eyes,.bolt-antenna,.em,.finale-rays,.finale-badge{animation:none!important}
   .fx{display:none}
   .book{transition:none}
 }
