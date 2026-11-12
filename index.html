@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Linh và Bolt: Hành trình công nghiệp Đức</title>
+<title>Lộc và Bolt: Hành trình công nghiệp Đức</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Be+Vietnam+Pro:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Bungee&display=swap">
@@ -14,21 +14,25 @@
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
 <defs>
-  <!-- Đường biên giới CHLB Đức chuẩn xác về hình thái địa lý -->
+  <!-- Đường biên giới CHLB Đức chuẩn xác -->
   <path id="dep" pathLength="1" d="M36 4 L43 5 L45 11 L52 13 L61 12 L71 13 L77 18 L79 27 L83 36 L82 44 L86 49 L77 54 L65 60 L71 67 L78 75 L73 83 L74 91 L67 95 L57 93 L47 95 L38 94 L27 95 L23 89 L25 78 L21 72 L12 67 L9 58 L10 48 L15 39 L19 29 L27 23 L33 17 L34 10 Z"/>
-  <symbol id="linh" viewBox="0 0 100 120" stroke="#1d1b1a" stroke-width="4">
-    <path class="linh-arm linh-arm-left" d="M25 76Q8 82 13 96" fill="none" stroke="#f2c9a0" stroke-width="8" stroke-linecap="round"/>
-    <path class="linh-arm linh-arm-right" d="M75 76Q92 82 87 96" fill="none" stroke="#f2c9a0" stroke-width="8" stroke-linecap="round"/>
+  <!-- Nhân vật Lộc (nam sinh viên kỹ thuật năng động) -->
+  <symbol id="loc" viewBox="0 0 100 120" stroke="#1d1b1a" stroke-width="4">
+    <path class="loc-arm loc-arm-left" d="M25 76Q8 82 13 96" fill="none" stroke="#f2c9a0" stroke-width="8" stroke-linecap="round"/>
+    <path class="loc-arm loc-arm-right" d="M75 76Q92 82 87 96" fill="none" stroke="#f2c9a0" stroke-width="8" stroke-linecap="round"/>
     <rect x="12" y="70" width="16" height="32" rx="7" fill="#f4b73a"/>
     <rect x="22" y="66" width="56" height="50" rx="14" fill="#d6372b"/>
     <path d="M34 112v5M66 112v5" stroke="#1d1b1a" stroke-width="6" stroke-linecap="round"/>
     <circle cx="50" cy="40" r="28" fill="#f2c9a0"/>
-    <path d="M21 40C18 8 82 8 79 40 66 28 36 26 21 40z" fill="#1d1b1a"/>
-    <path class="linh-eye" d="M36.5 46a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0 -7 0M56.5 46a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0 -7 0" fill="#1d1b1a" stroke="none"/>
-    <circle cx="31" cy="55" r="4" fill="#ef8f83" stroke="none" opacity=".65"/>
-    <circle cx="69" cy="55" r="4" fill="#ef8f83" stroke="none" opacity=".65"/>
+    <!-- Mái tóc nam gọn gàng, năng động -->
+    <path d="M21 38C19 10 81 10 79 38 72 24 58 21 48 24 38 20 27 25 21 38z" fill="#1d1b1a"/>
+    <path d="M36 16l6-6 6 5 7-6 6 6" fill="none" stroke="#1d1b1a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="loc-eye" d="M36.5 46a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0 -7 0M56.5 46a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0 -7 0" fill="#1d1b1a" stroke="none"/>
+    <circle cx="31" cy="55" r="3.5" fill="#ef8f83" stroke="none" opacity=".55"/>
+    <circle cx="69" cy="55" r="3.5" fill="#ef8f83" stroke="none" opacity=".55"/>
     <path d="M42 56q8 7 16 0" fill="none" stroke-width="3" stroke-linecap="round"/>
   </symbol>
+  <!-- Nhân vật Robot Bolt -->
   <symbol id="bolt" viewBox="0 0 100 120" stroke="#1d1b1a" stroke-width="4">
     <path d="M50 30V12" fill="none" stroke-width="5"/>
     <circle class="bolt-antenna" cx="50" cy="10" r="6" fill="#d6372b"/>
@@ -48,41 +52,38 @@
   <main class="book book-enter" id="book" aria-label="Truyện tranh sách lật">
 
     <!-- TRANG 1: BÌA -->
-    <section class="pg cover" data-page="BÌA">
+    <section class="pg cover" data-page="BÌA" data-speaker="loc">
       <div class="gear"></div>
       <div class="tt" style="z-index:1">Truyện tranh khám phá</div>
-      <h1 style="z-index:1">LINH VÀ BOLT<br>Hành trình công nghiệp Đức</h1>
+      <h1 style="z-index:1">LỘC VÀ BOLT<br>Hành trình công nghiệp Đức</h1>
       <div class="row" style="z-index:1;align-items:flex-end">
-        <svg class="ch" style="width:30cqw;height:36cqw"><use href="#linh"/></svg>
+        <svg class="ch" style="width:30cqw;height:36cqw"><use href="#loc"/></svg>
         <svg class="ch" style="width:30cqw;height:36cqw"><use href="#bolt"/></svg>
       </div>
-      <div class="sb" data-voice="linh" style="z-index:1">Lật trang để bắt đầu hành trình khám phá nước Đức nhé! <span class="cover-hint">← →</span></div>
+      <div class="sb" data-voice="loc" style="z-index:1">Lật trang để bắt đầu hành trình khám phá nước Đức cùng Lộc và Bolt nhé! <span class="cover-hint">← →</span></div>
     </section>
 
     <!-- TRANG 2: CHÀO MỪNG ĐẾN NƯỚC ĐỨC -->
-    <section class="pg">
+    <section class="pg" data-speaker="loc">
       <div class="tt">Chào mừng đến nước Đức!</div>
       <div class="gr c2" style="grid-template-rows:1fr 1fr 1fr">
-        <div class="pn sp"><div class="row"><svg class="ch"><use href="#linh"/></svg><div class="sb" data-voice="linh">Tớ là Linh, sinh viên đang thực tập kỹ thuật ở Đức. Còn đây là Bolt, robot dẫn đường thông minh!</div></div></div>
-        <div class="pn g"><span class="em">📐</span><span class="mid">357.588 km²</span>Lớn thứ 4 trong EU</div>
-        <div class="pn s"><span class="em">👥</span><span class="mid">84,5 triệu dân</span>Đông dân nhất EU</div>
+        <div class="pn sp"><div class="row"><svg class="ch"><use href="#loc"/></svg><div class="sb" data-voice="loc">Tớ là Lộc, sinh viên đang thực tập kỹ thuật ở Đức. Còn đây là Bolt, robot dẫn đường thông minh!</div></div></div>
+        <div class="pn g"><span class="em em-float">📐</span><span class="mid">357.588 km²</span>Lớn thứ 4 trong EU</div>
+        <div class="pn s"><span class="em em-bounce">👥</span><span class="mid">84,5 triệu dân</span>Đông dân nhất EU</div>
         <div class="pn sp"><div class="row"><svg class="ch"><use href="#bolt"/></svg><div class="sb" data-voice="bolt">Thủ đô là Berlin. Cả nước gồm 16 bang liên bang, mỗi bang có hiến pháp và chính quyền riêng. Do dân số già hóa nên Đức rất cần nhân lực kỹ thuật nhập cư.</div></div></div>
       </div>
     </section>
 
-    <!-- TRANG 3: GIỮA TRÁI TIM CHÂU ÂU (BẢN ĐỒ LÁNG GIỀNG CHUẨN XÁC) -->
-    <section class="pg">
+    <!-- TRANG 3: GIỮA TRÁI TIM CHÂU ÂU -->
+    <section class="pg" data-speaker="bolt">
       <div class="tt">Giữa trái tim châu Âu</div>
       <div class="gr c2" style="grid-template-rows:2.35fr 1fr">
         <div class="pn sp g" style="padding:1.2cqw;background:#cfe0e8">
           <svg class="m3" viewBox="-32 -12 164 122" style="flex:1;min-height:0;width:100%">
-            <!-- Tuyến giao thương Đông-Tây, Bắc-Nam -->
             <path class="flow" d="M-24 48 H124 M48 -8 V110"/>
             <use class="de" href="#dep"/>
-            <!-- Biển -->
             <text x="12" y="9" text-anchor="middle" style="fill:#2a5b7c;font-style:italic">Biển Bắc</text>
             <text x="74" y="6" text-anchor="middle" style="fill:#2a5b7c;font-style:italic">Biển Ban-tích</text>
-            <!-- 9 Nước láng giềng đúng vị trí địa lý -->
             <g class="cd" style="--j:0">
               <text x="38" y="-2" text-anchor="middle">Đan Mạch</text>
               <text x="14" y="34" text-anchor="end">Hà Lan</text>
@@ -101,72 +102,73 @@
           </svg>
           <div class="sb" data-voice="bolt" style="font-size:2.8cqw">Giáp 9 nước láng giềng và 2 biển lớn. Mọi trục hàng hóa Đông – Tây, Bắc – Nam châu Âu đều đi qua Đức!</div>
         </div>
-        <div class="pn"><span class="em">🏛️</span><b>Quốc hội</b>Bundestag (Hạ viện) và Bundesrat (đại diện 16 bang)</div>
-        <div class="pn r"><span class="em">🧑‍💼</span><b>Thủ tướng</b>Nắm quyền điều hành chính phủ. Tổng thống lo đối ngoại và nghi lễ.</div>
+        <div class="pn"><span class="em em-sway">🏛️</span><b>Quốc hội</b>Bundestag (Hạ viện) và Bundesrat (đại diện 16 bang)</div>
+        <div class="pn r"><span class="em em-bounce">🧑‍💼</span><b>Thủ tướng</b>Nắm quyền điều hành chính phủ. Tổng thống lo đối ngoại và nghi lễ.</div>
       </div>
     </section>
 
     <!-- TRANG 4: SỨC MẠNH KINH TẾ -->
-    <section class="pg">
+    <section class="pg" data-speaker="loc">
       <div class="tt">Sức mạnh kinh tế</div>
       <div class="gr c2" style="grid-template-rows:1fr 1fr 1fr">
         <div class="pn g"><span class="big">#1</span>châu Âu về quy mô kinh tế</div>
         <div class="pn s"><span class="big">#3</span>thế giới (GDP danh nghĩa, chỉ sau Mỹ và Trung Quốc)</div>
         <div class="pn"><span class="big">26–28%</span>GDP đến từ công nghiệp và xây dựng</div>
         <div class="pn r"><span class="big" style="color:var(--gold)">&gt;80%</span>kim ngạch xuất khẩu là hàng hóa công nghiệp</div>
-        <div class="pn sp"><div class="row"><svg class="ch"><use href="#linh"/></svg><div class="sb" data-voice="linh">Wow! Hèn gì nhãn “Made in Germany” nổi tiếng toàn cầu về độ chính xác và tự động hóa!</div></div></div>
+        <div class="pn sp"><div class="row"><svg class="ch"><use href="#loc"/></svg><div class="sb" data-voice="loc">Wow! Hèn gì nhãn “Made in Germany” nổi tiếng toàn cầu về độ chính xác và tự động hóa!</div></div></div>
       </div>
     </section>
 
     <!-- TRANG 5: BỐN NGÀNH CHỦ LỰC -->
-    <section class="pg">
+    <section class="pg" data-speaker="bolt">
       <div class="tt">Bốn ngành chủ lực</div>
       <div class="gr c2" style="grid-template-rows:1fr 1fr">
-        <div class="pn g"><span class="em">⚙️</span><b class="mid">Chế tạo máy</b>Máy công cụ, dây chuyền tự động hóa. Chiếm tỉ trọng cao nhất.</div>
-        <div class="pn r"><span class="em">🚗</span><b class="mid">Ô tô</b>Volkswagen, Mercedes-Benz, BMW, Audi, Porsche</div>
-        <div class="pn s"><span class="em">🧪</span><b class="mid">Hóa chất, dược</b>BASF, Bayer, Merck. Dẫn đầu châu Âu.</div>
-        <div class="pn k"><span class="em">🔌</span><b class="mid">Điện, điện tử</b>Siemens, Bosch, Infineon: cảm biến, vi mạch</div>
+        <div class="pn g"><span class="em em-spin">⚙️</span><b class="mid">Chế tạo máy</b>Máy công cụ, dây chuyền tự động hóa. Chiếm tỉ trọng cao nhất.</div>
+        <div class="pn r"><span class="em em-drive">🚗</span><b class="mid">Ô tô</b>Volkswagen, Mercedes-Benz, BMW, Audi, Porsche</div>
+        <div class="pn s"><span class="em em-sway">🧪</span><b class="mid">Hóa chất, dược</b>BASF, Bayer, Merck. Dẫn đầu châu Âu.</div>
+        <div class="pn k"><span class="em em-pulse">🔌</span><b class="mid">Điện, điện tử</b>Siemens, Bosch, Infineon: cảm biến, vi mạch</div>
       </div>
     </section>
 
-    <!-- TRANG 6: DOANH NGHIỆP VỪA & NHỎ (MITTELSTAND - NỘI DUNG MỞ RỘNG) -->
-    <section class="pg">
+    <!-- TRANG 6: DOANH NGHIỆP VỪA & NHỎ (MITTELSTAND) -->
+    <section class="pg" data-speaker="bolt">
       <div class="tt">Xương sống “Mittelstand”</div>
       <div class="gr c2" style="grid-template-rows:1fr 1fr 1fr">
         <div class="pn sp"><div class="row"><svg class="ch"><use href="#bolt"/></svg><div class="sb" data-voice="bolt">Bí mật sức mạnh công nghiệp Đức không chỉ nằm ở các tập đoàn khổng lồ, mà ở khối doanh nghiệp vừa và nhỏ (Mittelstand)!</div></div></div>
         <div class="pn g"><span class="big">&gt;99%</span>số doanh nghiệp tại Đức thuộc khối Mittelstand</div>
         <div class="pn s"><span class="big">~1.500</span>“Nhà vô địch thầm lặng” (Hidden Champions) dẫn đầu thị phần ngách toàn cầu</div>
-        <div class="pn sp r"><span class="em">🏆</span>Nhiều công ty gia đình hàng trăm năm tuổi chuyên sản xuất linh kiện độc quyền mà cả thế giới phải mua.</div>
+        <div class="pn sp r"><span class="em em-bounce">🏆</span>Nhiều công ty gia đình hàng trăm năm tuổi chuyên sản xuất linh kiện độc quyền mà cả thế giới phải mua.</div>
       </div>
     </section>
 
     <!-- TRANG 7: VÙNG RUA LỘT XÁC NGOẠN MỤC -->
-    <section class="pg">
+    <section class="pg" data-speaker="bolt">
       <div class="tt">Vùng Rua: lột xác ngoạn mục</div>
       <div class="gr c2" style="grid-template-rows:1fr 1fr 1fr">
-        <div class="pn k"><span class="em">⛏️🏭</span><b>Ngày xưa</b>Thủ phủ khai thác than đá và luyện kim nặng nhọc</div>
-        <div class="pn g"><span class="em">💻🌱</span><b>Ngày nay</b>Trung tâm công nghệ cao, công nghiệp môi trường và hậu cần</div>
+        <div class="pn k"><span class="em em-sway">⛏️🏭</span><b>Ngày xưa</b>Thủ phủ khai thác than đá và luyện kim nặng nhọc</div>
+        <div class="pn g"><span class="em em-float">💻🌱</span><b>Ngày nay</b>Trung tâm công nghệ cao, công nghiệp môi trường và hậu cần</div>
         <div class="pn sp"><div class="row"><svg class="ch"><use href="#bolt"/></svg><div class="sb" data-voice="bolt">Vùng Rua (bang Nordrhein-Westfalen) đã tái cấu trúc toàn diện — bài học kinh điển về chuyển đổi công nghiệp xanh!</div></div></div>
         <div class="pn sp s">Các hầm mỏ cũ được cải tạo thành công viên văn hóa, viện nghiên cứu và vườn ươm khởi nghiệp.</div>
       </div>
     </section>
 
-    <!-- TRANG 8: CÁC TRUNG TÂM CÔNG NGHIỆP (BẢN ĐỒ TỌA ĐỘ CHUẨN XÁC) -->
-    <section class="pg">
+    <!-- TRANG 8: CÁC TRUNG TÂM CÔNG NGHIỆP -->
+    <section class="pg" data-speaker="loc">
       <div class="tt">Các trung tâm công nghiệp</div>
       <div class="map pn" style="padding:0;background:#cfe0e8">
         <svg viewBox="-6 -2 114 104" style="width:100%;height:100%">
           <use class="de" href="#dep"/>
           <text x="16" y="10" style="fill:#2a5b7c;font-style:italic">Biển Bắc</text>
           <text x="72" y="7" style="fill:#2a5b7c;font-style:italic">Biển Ban-tích</text>
-          <!-- Tọa độ địa lý chuẩn xác của 7 thành phố/vùng -->
           <g class="cd" style="--j:0">
             <circle cx="43.5" cy="20.5" r="2.3" fill="#d6372b" stroke="#1d1b1a"/>
-            <text x="47" y="21.5">Hamburg (cảng biển, đóng tàu)</text>
+            <text x="47" y="21.5">Hamburg (cảng biển, 
+              đóng tàu)</text>
           </g>
           <g class="cd" style="--j:1">
             <circle cx="71.5" cy="34.5" r="3.1" fill="#f4b73a" stroke="#1d1b1a"/>
-            <text x="75.5" y="35.8">Berlin (thủ đô, công nghệ)</text>
+            <text x="75.5" y="35.8">Berlin (thủ đô, 
+              công nghệ)</text>
           </g>
           <g class="cd" style="--j:2">
             <circle class="pulse" cx="18.5" cy="46.5" r="3.2" fill="#d6372b" opacity=".5"/>
@@ -187,38 +189,39 @@
           </g>
           <g class="cd" style="--j:6">
             <circle cx="57.5" cy="86.5" r="2.3" fill="#d6372b" stroke="#1d1b1a"/>
-            <text x="61.5" y="87.8">München (công nghệ cao)</text>
+            <text x="61.5" y="87.8">München 
+              (công nghệ cao)</text>
           </g>
         </svg>
       </div>
-      <div class="nt">Bản đồ phân bố các cực tăng trưởng công nghiệp. Mật độ tập trung cao ở phía tây và phía nam.</div>
+      <div class="nt">Bản đồ phân bố các cực tăng trưởng công nghiệp: Hamburg, Berlin, Vùng Ruhr, Köln, Frankfurt, Stuttgart và München. Mật độ tập trung cao ở phía tây và phía nam.</div>
     </section>
 
-    <!-- TRANG 9: ĐÀO TẠO NGHỀ KÉP AUSBILDUNG (NỘI DUNG MỞ RỘNG) -->
-    <section class="pg">
+    <!-- TRANG 9: ĐÀO TẠO NGHỀ KÉP AUSBILDUNG -->
+    <section class="pg" data-speaker="loc">
       <div class="tt">Bí quyết nhân lực: Ausbildung</div>
       <div class="gr c2" style="grid-template-rows:1fr 1fr 1fr">
-        <div class="pn sp"><div class="row"><svg class="ch"><use href="#linh"/></svg><div class="sb" data-voice="linh">Ở Đức, kỹ sư và thợ lành nghề được đào tạo theo mô hình “học đi đôi với hành” cực kỳ bài bản!</div></div></div>
+        <div class="pn sp"><div class="row"><svg class="ch"><use href="#loc"/></svg><div class="sb" data-voice="loc">Ở Đức, kỹ sư và thợ lành nghề được đào tạo theo mô hình “học đi đôi với hành” cực kỳ bài bản!</div></div></div>
         <div class="pn g"><span class="big">70%</span>thời gian thực hành trực tiếp tại nhà máy, nhận lương học nghề</div>
         <div class="pn s"><span class="big">30%</span>thời gian học lý thuyết chuyên sâu tại trường nghề</div>
-        <div class="pn sp"><span class="em">🎓</span>Mô hình đào tạo kép giúp tỉ lệ thất nghiệp thanh niên tại Đức luôn thuộc nhóm thấp nhất châu Âu.</div>
+        <div class="pn sp"><span class="em em-bounce">🎓</span>Mô hình đào tạo kép giúp tỉ lệ thất nghiệp thanh niên tại Đức luôn thuộc nhóm thấp nhất châu Âu.</div>
       </div>
     </section>
 
     <!-- TRANG 10: THÁCH THỨC VÀ 4 LỐI ĐI -->
-    <section class="pg">
+    <section class="pg" data-speaker="loc">
       <div class="tt">Thách thức và 4 lối đi</div>
       <div class="gr c2" style="grid-template-rows:1fr 1.3fr">
-        <div class="pn sp"><div class="row"><svg class="ch"><use href="#linh"/></svg><div class="sb" data-voice="linh">Cạnh tranh toàn cầu gay gắt, giá năng lượng tăng, thiếu thợ kỹ thuật vì già hóa dân số. Nước Đức giải bài toán này thế nào?</div></div></div>
-        <div class="pn g"><span class="em">🤖</span>① Công nghiệp 4.0</div>
-        <div class="pn s"><span class="em">🌬️</span>② Chuyển dịch năng lượng</div>
-        <div class="pn r"><span class="em">🔬</span>③ Đầu tư mạnh R&amp;D</div>
-        <div class="pn k"><span class="em">🧭</span>④ Đa dạng chuỗi cung ứng</div>
+        <div class="pn sp"><div class="row"><svg class="ch"><use href="#loc"/></svg><div class="sb" data-voice="loc">Cạnh tranh toàn cầu gay gắt, giá năng lượng tăng, thiếu thợ kỹ thuật vì già hóa dân số. Nước Đức giải bài toán này thế nào?</div></div></div>
+        <div class="pn g"><span class="em em-bounce">🤖</span> Công nghiệp 4.0</div>
+        <div class="pn s"><span class="em em-sway">🌬️</span> Chuyển dịch năng lượng</div>
+        <div class="pn r"><span class="em em-pulse">🔬</span> Đầu tư mạnh R&amp;D</div>
+        <div class="pn k"><span class="em em-spin">🧭</span> Đa dạng chuỗi cung ứng</div>
       </div>
     </section>
 
     <!-- TRANG 11: NHÀ MÁY THÔNG MINH -->
-    <section class="pg">
+    <section class="pg" data-speaker="bolt">
       <div class="tt">① Nhà máy thông minh</div>
       <div class="gr c1" style="grid-template-rows:1fr 1fr 1fr">
         <div class="pn g"><div class="row"><svg class="ch"><use href="#bolt"/></svg><div class="sb" data-voice="bolt">Khái niệm Industrie 4.0 do chính nước Đức khởi xướng từ năm 2011 và vẫn giữ vị thế tiên phong!</div></div></div>
@@ -228,64 +231,70 @@
     </section>
 
     <!-- TRANG 12: ENERGIEWENDE -->
-    <section class="pg">
+    <section class="pg" data-speaker="bolt">
       <div class="tt">② Energiewende (Chuyển dịch năng lượng)</div>
       <div class="gr c2" style="grid-template-rows:1fr 1fr 1fr">
-        <div class="pn k"><span class="em">☢️</span><b>Tháng 4/2023</b>Đóng cửa toàn bộ các nhà máy điện hạt nhân</div>
-        <div class="pn"><span class="em">🏭</span><b>Điện than</b>Lộ trình dừng chậm nhất 2038, phấn đấu 2030</div>
-        <div class="pn s"><span class="em">🌊</span>Điện gió ngoài khơi ở Biển Bắc, Biển Ban-tích và điện mặt trời</div>
-        <div class="pn g"><span class="em">💧</span>Phát triển Hydro xanh và công nghệ lưu trữ lưới điện</div>
-        <div class="pn sp r"><span class="em">🔋</span>Ngành ô tô tăng tốc chuyển sang xe điện và pin thế hệ mới để đáp ứng tiêu chuẩn khí hậu EU.</div>
+        <div class="pn k"><span class="em em-pulse">☢️</span><b>Tháng 4/2023</b>Đóng cửa toàn bộ các nhà máy điện hạt nhân</div>
+        <div class="pn"><span class="em em-sway">🏭</span><b>Điện than</b>Lộ trình dừng chậm nhất 2038, phấn đấu 2030</div>
+        <div class="pn s"><span class="em em-float">🌊</span>Điện gió ngoài khơi ở Biển Bắc, Biển Ban-tích và điện mặt trời</div>
+        <div class="pn g"><span class="em em-bounce">💧</span>Phát triển Hydro xanh và công nghệ lưu trữ lưới điện</div>
+        <div class="pn sp r"><span class="em em-drive">🔋</span>Ngành ô tô tăng tốc chuyển sang xe điện và pin thế hệ mới để đáp ứng tiêu chuẩn khí hậu EU.</div>
       </div>
     </section>
 
     <!-- TRANG 13: DÁM CHI CHO NGHIÊN CỨU -->
-    <section class="pg">
+    <section class="pg" data-speaker="loc">
       <div class="tt">③ Dám chi cho nghiên cứu</div>
       <div class="gr c1" style="grid-template-rows:1.2fr 1fr 1fr">
         <div class="pn g"><span class="big">&gt;3,1% GDP</span>chi cho R&amp;D, vượt mục tiêu 3% của EU, chủ yếu đến từ doanh nghiệp tư nhân</div>
-        <div class="pn s"><span class="em">💾</span>Tự chủ vi điện tử và chất bán dẫn theo Đạo luật Chip châu Âu</div>
-        <div class="pn"><span class="em">🧬</span>Đột phá công nghệ sinh học, y sinh học và vật liệu mới thân thiện môi trường</div>
+        <div class="pn s"><span class="em em-pulse">💾</span>Tự chủ vi điện tử và chất bán dẫn theo Đạo luật Chip châu Âu</div>
+        <div class="pn"><span class="em em-spin">🧬</span>Đột phá công nghệ sinh học, y sinh học và vật liệu mới thân thiện môi trường</div>
       </div>
     </section>
 
     <!-- TRANG 14: KHÔNG BỎ TRỨNG MỘT GIỎ -->
-    <section class="pg">
+    <section class="pg" data-speaker="loc">
       <div class="tt">④ Không bỏ trứng một giỏ</div>
       <div class="gr c1" style="grid-template-rows:1fr 1fr 1fr">
-        <div class="pn k"><div class="row"><svg class="ch"><use href="#linh"/></svg><div class="sb" data-voice="linh">Chiến lược “De-risking” trong chuỗi cung ứng nghĩa là gì vậy Bolt?</div></div></div>
+        <div class="pn k"><div class="row"><svg class="ch"><use href="#loc"/></svg><div class="sb" data-voice="loc">Chiến lược “De-risking” trong chuỗi cung ứng nghĩa là gì vậy Bolt?</div></div></div>
         <div class="pn g"><div class="row"><svg class="ch"><use href="#bolt"/></svg><div class="sb" data-voice="bolt">Là đa dạng hóa nguồn nguyên liệu (đất hiếm, lithium) và năng lượng, tránh phụ thuộc vào một quốc gia duy nhất!</div></div></div>
-        <div class="pn s"><span class="em">🤝</span>Mở rộng đầu tư, chuyển giao công nghệ và hiệp định thương mại với Ấn Độ Dương – Thái Bình Dương và châu Mỹ.</div>
+        <div class="pn s"><span class="em em-sway">🤝</span>Mở rộng đầu tư, chuyển giao công nghệ và hiệp định thương mại với Ấn Độ Dương – Thái Bình Dương và châu Mỹ.</div>
       </div>
     </section>
 
-    <!-- TRANG 15: HỢP TÁC CÔNG NGHIỆP ĐỨC - VIỆT (NỘI DUNG MỞ RỘNG) -->
-    <section class="pg">
+    <!-- TRANG 15: HỢP TÁC CÔNG NGHIỆP ĐỨC - VIỆT -->
+    <section class="pg" data-speaker="loc">
       <div class="tt">Cơ hội cho Việt Nam</div>
       <div class="gr c2" style="grid-template-rows:1fr 1fr 1fr">
-        <div class="pn sp"><div class="row"><svg class="ch"><use href="#linh"/></svg><div class="sb" data-voice="linh">Đức là đối tác thương mại lớn nhất của Việt Nam tại EU, mở ra rất nhiều cơ hội cho thế hệ trẻ chúng mình!</div></div></div>
-        <div class="pn g"><span class="em">🏭</span><b>Dịch chuyển sản xuất</b>Nhiều tập đoàn Đức mở nhà máy công nghệ cao tại Việt Nam</div>
-        <div class="pn s"><span class="em">🧑‍🔧</span><b>Nhân lực kỹ thuật</b>Cơ hội du học nghề, thực tập và làm việc trong môi trường chuẩn Đức</div>
-        <div class="pn sp k"><span class="em">🌱</span>Hợp tác chuyển dịch năng lượng xanh, tự động hóa và đào tạo nghề chất lượng cao.</div>
+        <div class="pn sp"><div class="row"><svg class="ch"><use href="#loc"/></svg><div class="sb" data-voice="loc">Đức là đối tác thương mại lớn nhất của Việt Nam tại EU, mở ra rất nhiều cơ hội cho thế hệ trẻ chúng mình!</div></div></div>
+        <div class="pn g"><span class="em em-sway">🏭</span><b>Dịch chuyển sản xuất</b>Nhiều tập đoàn Đức mở nhà máy công nghệ cao tại Việt Nam</div>
+        <div class="pn s"><span class="em em-bounce">🧑‍🔧</span><b>Nhân lực kỹ thuật</b>Cơ hội du học nghề, thực tập và làm việc trong môi trường chuẩn Đức</div>
+        <div class="pn sp k"><span class="em em-float">🌱</span>Hợp tác chuyển dịch năng lượng xanh, tự động hóa và đào tạo nghề chất lượng cao.</div>
       </div>
     </section>
 
-    <!-- TRANG 16: HẾT TẬP 1 -->
-    <section class="pg cover" style="background-color:var(--steel)">
-      <div class="tt">Hết tập 1</div>
-      <div class="row" style="align-items:flex-end">
-        <svg class="ch" style="width:26cqw;height:31cqw"><use href="#linh"/></svg>
-        <svg class="ch" style="width:26cqw;height:31cqw"><use href="#bolt"/></svg>
+    <!-- TRANG 16: HẾT TẬP 1 (KÈM PHÁO HOA & HUY HIỆU HOÀN THÀNH) -->
+    <section class="pg cover finale-page" style="background-color:var(--steel)" data-speaker="bolt">
+      <div class="finale-rays"></div>
+      <div class="tt" style="z-index:2">Hết tập Truyện</div>
+      <div class="finale-badge" style="z-index:2"><span class="em em-bounce">🎉</span> HOÀN THÀNH HÀNH TRÌNH <span class="em em-bounce">🏆</span></div>
+      <div class="row" style="align-items:flex-end;z-index:2">
+        <svg class="ch" style="width:25cqw;height:30cqw"><use href="#loc"/></svg>
+        <svg class="ch" style="width:25cqw;height:30cqw"><use href="#bolt"/></svg>
       </div>
-      <div class="sb" data-voice="bolt" style="font-size:3.5cqw">Từ than thép đến nhà máy thông minh, nước Đức luôn chuyển mình để giữ vững vị thế. Hành trình của bạn đã sẵn sàng chưa?</div>
-      <div class="nt" style="color:#fff">Nguồn: Báo cáo tổng quan về phát triển công nghiệp CHLB Đức</div>
+      <div class="sb" data-voice="bolt" style="font-size:3.3cqw;z-index:2">Từ than thép đến nhà máy thông minh, nước Đức luôn chuyển mình để giữ vững vị thế. Cảm ơn bạn đã đồng hành cùng Lộc và Bolt!</div>
+      <div class="finale-actions" style="z-index:2">
+        <button id="replayBtn" class="finale-btn" type="button">🔄 Đọc lại từ đầu</button>
+        <button id="celebrateBtn" class="finale-btn gold" type="button">🎊 Bắn pháo hoa</button>
+      </div>
+      <div class="nt" style="color:#fff;z-index:2">Nguồn: Báo cáo tổng quan về phát triển công nghiệp CHLB Đức</div>
     </section>
 
   </main>
 
   <!-- THANH ĐIỀU KHIỂN BÊN CẠNH (TỐI ƯU KHÔNG GIAN CHO SÁCH) -->
   <aside class="side-dock" aria-label="Bảng điều khiển đọc truyện">
-    <div class="brand-badge" title="Linh &amp; Bolt">L<span>×</span>B</div>
+    <div class="brand-badge" title="Lộc &amp; Bolt">L<span>×</span>B</div>
 
     <div class="nav-cluster" role="group" aria-label="Chuyển trang">
       <button id="prev" class="dock-btn primary" type="button" aria-label="Trang trước" title="Trang trước (←)">▲</button>
@@ -298,7 +307,7 @@
     <div id="dots" class="dots-v" aria-label="Chọn nhanh trang"></div>
 
     <div class="tool-cluster" role="group" aria-label="Công cụ">
-      <button id="voice" class="dock-btn" type="button" aria-label="Đọc thoại nhân vật" title="Giọng đọc Linh &amp; Bolt (V)">🗣️</button>
+      <button id="voice" class="dock-btn" type="button" aria-label="Đọc thoại nhân vật" title="Giọng đọc Lộc &amp; Bolt (V)">🗣️</button>
       <button id="sound" class="dock-btn" type="button" aria-label="Âm thanh lật trang" title="Âm thanh lật sách (M)">🔊</button>
       <button id="theme" class="dock-btn" type="button" aria-label="Đổi giao diện" title="Giao diện sáng/tối (T)">◐</button>
       <button id="fullscreen" class="dock-btn" type="button" aria-label="Toàn màn hình" title="Toàn màn hình (F)">⛶</button>
