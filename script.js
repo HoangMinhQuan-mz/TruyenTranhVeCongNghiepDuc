@@ -12,35 +12,55 @@
   var toast = document.getElementById("toast");
   var index = 0, touchStart = null, toastTimer, turnTimer;
 
+  // Khôi phục trang đã lưu nếu có
+  try {
+    var saved = parseInt(localStorage.getItem("lb-page"), 10);
+    if (!isNaN(saved) && saved >= 0 && saved < pages.length) index = saved;
+  } catch (e) {}
+
   function showToast(message) {
     toast.textContent = message;
     toast.classList.add("show");
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 2300);
+    toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 2400);
   }
 
   function go(target) {
     var oldIndex = index;
     index = Math.max(0, Math.min(pages.length - 1, target));
+    try { localStorage.setItem("lb-page", String(index)); } catch (e) {}
+
     if (oldIndex !== index) {
+      var movingPage = index > oldIndex ? pages[oldIndex] : pages[index];
+      if (movingPage) {
+        movingPage.classList.remove("turning");
+        void movingPage.offsetWidth;
+        movingPage.classList.add("turning");
+        setTimeout(function () { movingPage.classList.remove("turning"); }, 960);
+      }
       book.classList.remove("turn-forward", "turn-back");
       void book.offsetWidth;
       book.classList.add(index > oldIndex ? "turn-forward" : "turn-back");
       clearTimeout(turnTimer);
       turnTimer = setTimeout(function () {
         book.classList.remove("turn-forward", "turn-back");
-      }, 900);
+      }, 920);
     }
 
     pages.forEach(function (page, i) {
       page.classList.toggle("f", i < index);
       page.classList.toggle("on", i === index);
-      page.style.zIndex = i < index ? 100 + i : pages.length - i;
+      // Trang đang lật giữ z-index cao nhất để thấy rõ tờ giấy xoay qua
+      if (i === oldIndex && oldIndex !== index) {
+        page.style.zIndex = 220;
+      } else {
+        page.style.zIndex = i < index ? 100 + i : pages.length - i;
+      }
       page.setAttribute("aria-hidden", i === index ? "false" : "true");
     });
 
-    count.textContent = "TRANG " + String(index + 1).padStart(2, "0") + " / " + String(pages.length).padStart(2, "0");
-    progress.style.width = ((index + 1) / pages.length * 100) + "%";
+    count.textContent = String(index + 1).padStart(2, "0") + "/" + String(pages.length).padStart(2, "0");
+    progress.style.height = ((index + 1) / pages.length * 100) + "%";
     prev.disabled = index === 0;
     next.disabled = index === pages.length - 1;
     document.title = (index + 1) + "/" + pages.length + " · Linh và Bolt";
@@ -95,10 +115,18 @@
   });
 
   helpBtn.addEventListener("click", function () {
-    showToast("Vuốt ngang, nhấn hai bên trang hoặc dùng phím ← → để lật.");
+    showToast("Nhấn hai bên trang, vuốt ngang hoặc phím ← → | V: Giọng đọc | M: Tiếng lật giấy");
   });
 
+  // Thêm lớp mặt sau & hiệu ứng ánh sáng cho từng tờ sách
   pages.forEach(function (page) {
+    var back = document.createElement("div");
+    back.className = "pg-backface";
+    var sheen = document.createElement("div");
+    sheen.className = "pg-sheen";
+    page.appendChild(back);
+    page.appendChild(sheen);
+
     Array.prototype.forEach.call(page.querySelectorAll(".pn"), function (panel, i) {
       panel.style.setProperty("--i", i);
       Array.prototype.forEach.call(panel.querySelectorAll(".sb,.big"), function (item) {
@@ -109,6 +137,7 @@
       if (!item.style.getPropertyValue("--j")) item.style.setProperty("--j", i);
     });
   });
-  window.LinhBolt={go:go,count:pages.length};
-  go(0);
+
+  window.LinhBolt = { go: go, count: pages.length, toast: showToast };
+  go(index);
 })();
