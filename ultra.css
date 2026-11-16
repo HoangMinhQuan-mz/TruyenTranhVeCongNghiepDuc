@@ -253,9 +253,3 @@ html[data-theme="dark"]::after{
 .finale-btn.gold{background:var(--gold)}
 .finale-btn:hover{transform:translateY(-2px) scale(1.03)}
 .finale-btn:active{transform:translateY(1px)}
-
-@media(prefers-reduced-motion:reduce){
-  body,html::before,html::after,.pg.on .tt::before,.row.talk .ch,.loc-arm-left,.loc-arm-right,.loc-eye,.bolt-eyes,.bolt-antenna,.em,.finale-rays,.finale-badge{animation:none!important}
-  .fx{display:none}
-  .book{transition:none}
-}
