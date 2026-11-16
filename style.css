@@ -426,10 +426,3 @@ svg text{font:700 4.3px var(--font-body);fill:#1d1b1a;paint-order:stroke;stroke:
   .dots-v,.reading-progress-v,.brand-badge{display:none}
   .dock-btn{width:36px;height:36px;font-size:14px}
 }
-
-@media(prefers-reduced-motion:reduce){
-  *{animation:none!important}
-  .pn,.sb,.cd{opacity:1!important}
-  .de{stroke-dashoffset:0;fill-opacity:1}
-  .pg,.pg.f{transition:none}
-}
