@@ -1,6 +1,6 @@
 (function () {
   "use strict";
-  var reduce = window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+  var reduce = false;
   var pages = Array.prototype.slice.call(document.querySelectorAll(".pg"));
   var book = document.getElementById("book");
   var dotsBox = document.getElementById("dots");
